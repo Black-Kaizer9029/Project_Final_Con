@@ -7,8 +7,17 @@ export type TypePayloadUser = {
 
 };
 
-// Schema สำหรับการสร้าง User ใหม่
+// Schema สำหรับการLogin User ใหม่
 export const LoginUserSchema = z.object({
+    body: z.object({
+        username: z.string().max(255),
+        password: z.string().max(255),
+
+    }),
+});
+
+// Schema สำหรับการLogin User ใหม่
+export const LogoutUserSchema = z.object({
     body: z.object({
         username: z.string().max(255),
         password: z.string().max(255),

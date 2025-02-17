@@ -8,7 +8,7 @@ import { generateAccessToken } from "@common/utils/jwt";
 
 export const authService = {
 
-    // สร้างผู้ใช้ใหม่
+    // login a user
     login: async (payload: TypePayloadUser, res:any) => {
         try {
             const checkUser = await UserRepository.findByUsername(payload.username);
