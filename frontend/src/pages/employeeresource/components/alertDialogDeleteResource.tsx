@@ -36,10 +36,10 @@ const AlertDialogDeleteResource: React.FC<AlertDialogDeleteResourceProps> = ({ g
                 </Flex>
                 <Flex gap="3" mt="4" justify="end">
                     <Dialog.Close>
-                        <Button variant="soft" color="gray">Cancel</Button>
+                        <Button className="cursor-pointer" variant="soft" color="gray">Cancel</Button>
                     </Dialog.Close>
                     <Dialog.Close>
-                        <Button onClick={handleDelete} color="red">Confirm</Button>
+                        <Button className="cursor-pointer" variant="soft" onClick={handleDelete} color="red">Confirm</Button>
                     </Dialog.Close>
                 </Flex>
             </Dialog.Content>

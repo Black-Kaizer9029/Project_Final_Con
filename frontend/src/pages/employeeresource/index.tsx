@@ -87,16 +87,20 @@ export default function ResourcePage() {
                                                 <Table.Cell className="align-left">{new Intl.NumberFormat("en-US").format(resource.cost)}</Table.Cell>
                                                 <Table.Cell className="align-left">{new Intl.NumberFormat("en-US").format(resource.quantity)}</Table.Cell>
                                                 <Table.Cell className="align-left">{new Intl.NumberFormat("en-US").format(resource.total)}</Table.Cell>
-                                                <Table.Cell>
-                                                    <Flex gap="2">
-                                                        {/* แสดงปุ่ม Add Resource เฉพาะแถวแรก */}
-                                                        {index === 0 && <DialogAddResource getResourceData={getResourceData} task_id={task_id} />}
+                                                <Table.Cell colSpan={2}>
+                                                    <Flex gap="2" align="center">
+                                                        <div className="w-[72px] h-[36px] flex items-center justify-center">
+                                                            {index === 0 && (
+                                                            <DialogAddResource getResourceData={getResourceData} task_id={task_id} />
+                                                            )}
+                                                        </div>
+
                                                         <DialogEditResource getResourceData={getResourceData} resource={resource} />
-                                                        <AlertDialogDeleteResource 
-                                                            getResourceData={getResourceData} 
-                                                            resource_id={resource.resource_id} 
+                                                        <AlertDialogDeleteResource
+                                                            getResourceData={getResourceData}
+                                                            resource_id={resource.resource_id}
                                                             task_name={resource.tasks.task_name}
-                                                            resource_name={resource.resource_name} 
+                                                            resource_name={resource.resource_name}
                                                         />
                                                     </Flex>
                                                 </Table.Cell>

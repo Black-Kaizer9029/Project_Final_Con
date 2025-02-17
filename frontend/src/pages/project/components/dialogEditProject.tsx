@@ -70,7 +70,7 @@ const DialogEdit = ({
     return (
         <Dialog.Root>
             <Dialog.Trigger>
-                <Button size="1" color="orange" variant="soft">
+                <Button size="1" color="orange" variant="soft" className="cursor-pointer">
                     Edit
                 </Button>
             </Dialog.Trigger>
@@ -148,11 +148,11 @@ const DialogEdit = ({
                 </Flex>
                 <Flex gap="3" mt="4" justify="end">
                     <Dialog.Close>
-                        <Button variant="soft" color="gray">
+                        <Button className="cursor-pointer" variant="soft" color="gray">
                             Cancel
                         </Button>
                     </Dialog.Close>
-                    <Button onClick={handleUpdateProject} color="orange">
+                    <Button onClick={handleUpdateProject} color="orange"  variant="soft" className="cursor-pointer">
                         Update
                     </Button>
                 </Flex>

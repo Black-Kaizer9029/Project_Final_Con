@@ -38,7 +38,7 @@ const DialogAddResource: React.FC<DialogAddResourceProps> = ({ getResourceData, 
     return (
         <Dialog.Root>
             <Dialog.Trigger asChild>
-                <Button size="1" variant="soft" className="cursor-pointer">+ Add</Button>
+                <Button  variant="soft" className="cursor-pointer">+ Add</Button>
             </Dialog.Trigger>
             <Dialog.Content>
                 <Dialog.Title>Add Resource</Dialog.Title>
@@ -87,7 +87,16 @@ const DialogAddResource: React.FC<DialogAddResourceProps> = ({ getResourceData, 
                         onChange={handleQuantityChange} placeholder="Enter Quantity" />
                     </label>
                 </Flex>
-                <Button mb="3" mt="3" onClick={handleAddResource}>Save</Button>
+                <Flex gap="3" mt="4" justify="end">
+                    <Dialog.Close>
+                        <Button className="cursor-pointer" variant="soft" color="gray" mb="3" mt="3" >
+                            Cancel
+                        </Button>
+                    </Dialog.Close>
+                    <Dialog.Close>
+                        <Button className="cursor-pointer" variant="soft" mb="3" mt="3" onClick={handleAddResource}>Save</Button>
+                    </Dialog.Close>
+                </Flex>
             </Dialog.Content>
         </Dialog.Root>
     );

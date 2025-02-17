@@ -68,7 +68,7 @@ const DialogAdd = ({ getProjectData }: DialogProjectProps) => {
     return (
         <Dialog.Root>
             <Dialog.Trigger>
-                <Button size="1">Create</Button>
+                <Button className="cursor-pointer" variant="soft" size="1">Create</Button>
             </Dialog.Trigger>
             <Dialog.Content maxWidth="450px">
                 <Dialog.Title>Create Project</Dialog.Title>
@@ -151,12 +151,12 @@ const DialogAdd = ({ getProjectData }: DialogProjectProps) => {
                 </Flex>
                 <Flex gap="3" mt="4" justify="end">
                     <Dialog.Close>
-                        <Button variant="soft" color="gray">
+                        <Button className="cursor-pointer" variant="soft" color="gray">
                             Cancel
                         </Button>
                     </Dialog.Close>
                     <Dialog.Close>
-                        <Button onClick={handleCreateProject}>Save</Button>
+                        <Button className="cursor-pointer" onClick={handleCreateProject}>Save</Button>
                     </Dialog.Close>
                 </Flex>
             </Dialog.Content>

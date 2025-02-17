@@ -34,7 +34,7 @@ const AlertDialogDelete = ({getProjectDate, project_id, project_name}: DialogPro
     return (
         <Dialog.Root>
         <Dialog.Trigger>
-            <Button size="1" color="red" variant="soft">Delete</Button>
+            <Button className="cursor-pointer" size="1" color="red" variant="soft">Delete</Button>
         </Dialog.Trigger>
 
         <Dialog.Content maxWidth="450px">
@@ -49,12 +49,12 @@ const AlertDialogDelete = ({getProjectDate, project_id, project_name}: DialogPro
             </Flex>
             <Flex gap="3" mt="4" justify="end">
                 <Dialog.Close>
-                    <Button variant="soft" color="gray">
+                    <Button variant="soft" color="gray" className="cursor-pointer">
                     Cancel
                     </Button>
                 </Dialog.Close>
                 <Dialog.Close>
-                    <Button onClick={handleDeleteProject} color="red">Delete</Button>
+                    <Button className="cursor-pointer" onClick={handleDeleteProject} color="red" variant="soft">Delete</Button>
                 </Dialog.Close>.
             </Flex>
         </Dialog.Content>

@@ -94,7 +94,7 @@ const DialogAdd = ({ getUserData }: DialogUserProps) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button size="1">Create</Button>
+        <Button size="1" variant="soft" className="cursor-pointer">Create</Button>
       </Dialog.Trigger>
       <Dialog.Content maxWidth="450px">
         <Dialog.Title>Create User</Dialog.Title>
@@ -185,11 +185,11 @@ const DialogAdd = ({ getUserData }: DialogUserProps) => {
         </Flex>
         <Flex gap="3" mt="4" justify="end">
           <Dialog.Close>
-            <Button variant="soft" color="gray">
+            <Button className="cursor-pointer" variant="soft" color="gray">
               Cancel
             </Button>
           </Dialog.Close>
-          <Button onClick={handleCreateUser}>Save</Button>
+          <Button className="cursor-pointer" variant="soft" onClick={handleCreateUser}>Save</Button>
         </Flex>
       </Dialog.Content>
     </Dialog.Root>

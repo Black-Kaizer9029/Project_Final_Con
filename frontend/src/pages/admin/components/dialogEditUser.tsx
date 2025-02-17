@@ -183,7 +183,7 @@ const DialogEdit = ({ getUserData, user_id, username, role, project }: DialogUse
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button size="1" color="orange" variant="soft">
+        <Button className="cursor-pointer" size="1" color="orange" variant="soft">
           Edit
         </Button>
       </Dialog.Trigger>
@@ -283,11 +283,11 @@ const DialogEdit = ({ getUserData, user_id, username, role, project }: DialogUse
         </Flex>
         <Flex gap="3" mt="4" justify="end">
           <Dialog.Close>
-            <Button variant="soft" color="gray">
+            <Button className="cursor-pointer" variant="soft" color="gray">
               Cancel
             </Button>
           </Dialog.Close>
-          <Button onClick={handleUpdateUser}>Save</Button>
+          <Button className="cursor-pointer" variant="soft" color="orange" onClick={handleUpdateUser}>Update</Button>
         </Flex>
       </Dialog.Content>
     </Dialog.Root>

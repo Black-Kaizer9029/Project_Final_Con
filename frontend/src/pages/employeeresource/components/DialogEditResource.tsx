@@ -100,7 +100,16 @@ const DialogEditResource: React.FC<DialogEditResourceProps> = ({ getResourceData
                         onChange={handleQuantityChange} placeholder="Enter Quantity" />
                     </label>
                 </Flex>
-                <Button mb="3" mt="3" onClick={handleEditResource}>Save</Button>
+                <Flex gap="3" mt="4" justify="end">
+                    <Dialog.Close>
+                        <Button className="cursor-pointer" variant="soft" color="gray" mb="3" mt="3" >
+                            Cancel
+                        </Button>
+                    </Dialog.Close>
+                    <Dialog.Close>
+                        <Button className="cursor-pointer" variant="soft" color="orange" mb="3" mt="3" onClick={handleEditResource}>Update</Button>
+                    </Dialog.Close>
+                </Flex>
             </Dialog.Content>
         </Dialog.Root>
     );
