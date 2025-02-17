@@ -10,7 +10,9 @@ export const authRouter = (() => {
 
    
     // CREATE a user
-    router.post("/login", validateRequest(LoginUserSchema), async (req: Request, res: Response) => {
+    router.post("/login",
+        authenticateJWT,
+         validateRequest(LoginUserSchema), async (req: Request, res: Response) => {
         const payload = req.body;
         const serviceResponse = await authService.login(payload, res);
         handleServiceResponse(serviceResponse, res);
