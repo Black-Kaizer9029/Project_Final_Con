@@ -2,7 +2,6 @@ import express, { Request, Response } from "express";
 import { handleServiceResponse, validateRequest } from "@common/utils/httpHandlers";
 import { authService } from "@modules/auth/authService";
 import { LoginUserSchema,LogoutUserSchema } from "@modules/auth/authModel";
-import { authenticateJWT } from "@common/middleware/authMiddleware";
 
 
 export const authRouter = (() => {

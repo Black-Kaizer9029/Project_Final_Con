@@ -54,7 +54,7 @@ export default function ResourcePage() {
                 <Table.Root variant="surface">
                     <Table.Header>
                         <Table.Row>
-                            <Table.ColumnHeaderCell>Task ID</Table.ColumnHeaderCell>
+                            {/* <Table.ColumnHeaderCell>Task ID</Table.ColumnHeaderCell> */}
                             <Table.ColumnHeaderCell>Task Name</Table.ColumnHeaderCell>
                             <Table.ColumnHeaderCell>Resource Name</Table.ColumnHeaderCell>
                             <Table.ColumnHeaderCell>Resource Type</Table.ColumnHeaderCell>
@@ -74,7 +74,7 @@ export default function ResourcePage() {
                                             <Table.Row key={resource.resource_id}>
                                                 {index === 0 && (
                                                     <>
-                                                        <Table.Cell rowSpan={taskResources.length}>{task_id}</Table.Cell>
+                                                        {/* <Table.Cell rowSpan={taskResources.length}>{task_id}</Table.Cell> */}
                                                         <Table.Cell rowSpan={taskResources.length}>
                                                             <Flex direction="row" align="center" gap="2">
                                                                 <Text>{task?.task_name}</Text>
@@ -85,7 +85,7 @@ export default function ResourcePage() {
                                                 <Table.Cell>{resource.resource_name}</Table.Cell>
                                                 <Table.Cell>{resource.resource_type}</Table.Cell>
                                                 <Table.Cell className="align-left">{new Intl.NumberFormat("en-US").format(resource.cost)}</Table.Cell>
-                                                <Table.Cell className="align-left">{new Intl.NumberFormat("en-US").format(resource.quantity)}</Table.Cell>
+                                                <Table.Cell className="align-center">{new Intl.NumberFormat("en-US").format(resource.quantity)}</Table.Cell>
                                                 <Table.Cell className="align-left">{new Intl.NumberFormat("en-US").format(resource.total)}</Table.Cell>
                                                 <Table.Cell colSpan={2}>
                                                     <Flex gap="2" align="center">
@@ -108,7 +108,7 @@ export default function ResourcePage() {
                                         ))
                                     ) : (
                                         <Table.Row>
-                                            <Table.Cell>{task_id}</Table.Cell>
+                                            {/* <Table.Cell>{task_id}</Table.Cell> */}
                                             <Table.Cell>
                                                 <Flex direction="row" align="center" gap="2">
                                                     <Text>{task?.task_name}</Text>
