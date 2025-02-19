@@ -17,6 +17,8 @@ export const userRouter = (() => {
         handleServiceResponse(serviceResponse, res);
     });
 
+    //test updatr
+
     // CREATE a user
     router.post("/create", 
         authenticateJWT,
