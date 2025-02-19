@@ -6,7 +6,7 @@ function rolegrop3(req:Request, res:Response, next: NextFunction): void {
 
     const role = req.user?.payload?.role;
     // ตรวจสอบเงื่อนไข Role
-    if (role !== 'CEO' || role !== 'Admin') {
+    if (role !== 'Employee' || role !== 'Admin') {
         const response = new ServiceResponse(
             ResponseStatus.Failed,
             "Unauthorized",
