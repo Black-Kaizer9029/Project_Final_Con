@@ -6,7 +6,7 @@ function rolegrop5(req:Request, res:Response, next: NextFunction): void { {/* �
 
     const role = req.user?.payload?.role; {/* ดึงข้อมูล Role จาก req.user.payload.role ถ้ามีค่าให้เก็บไว้ที่ตัวแปร role */}
     // ตรวจสอบเงื่อนไข Role
-    if (role !== 'Manager' || role !== 'Admin') { {/* ตรวจสอบเงื่อนไข Role ว่าไม่ใช่ Manager หรือ Admin */}
+    if (role !== 'Manager' && role !== 'Admin') { {/* ตรวจสอบเงื่อนไข Role ว่าไม่ใช่ Manager หรือ Admin */}
         const response = new ServiceResponse( //{/* สร้างตัวแปร response และกำหนดค่าด้วย new ServiceResponse */}
             ResponseStatus.Failed, //{/* กำหนดค่า ResponseStatus.Failed ให้กับ response.status */}
             "Unauthorized", //{/* กำหนดข้อความ "Unauthorized" ให้กับ response.message */}

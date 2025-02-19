@@ -13,13 +13,13 @@ const Login: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8081/v1/auth/login', {
+      const response = await fetch('http://localhost:8081/v1/auth/login', { //axios.post
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         credentials: 'include', // อนุญาตให้ browser จัดการ cookie
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, password }), // ไม่ต้องส่ง role
       });
 
       if (response.ok) {

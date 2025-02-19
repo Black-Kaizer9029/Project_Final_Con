@@ -188,8 +188,10 @@ const DialogAdd = ({ getUserData }: DialogUserProps) => {
             <Button className="cursor-pointer" variant="soft" color="gray">
               Cancel
             </Button>
+          </Dialog.Close >
+          <Dialog.Close>
+            <Button className="cursor-pointer" onClick={handleCreateUser}>Create</Button>
           </Dialog.Close>
-          <Button className="cursor-pointer" variant="soft" onClick={handleCreateUser}>Save</Button>
         </Flex>
       </Dialog.Content>
     </Dialog.Root>

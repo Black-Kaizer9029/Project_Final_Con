@@ -4,6 +4,7 @@ import { z } from "zod";
 export type TypePayloadUser = {  
     username: string;    // ชื่อผู้ใช้ที่ต้องการ
     password: string;    // รหัสผ่าน
+    role: string;        // บทบาทของผู้ใช้
 
 };
 
@@ -12,7 +13,6 @@ export const LoginUserSchema = z.object({
     body: z.object({
         username: z.string().max(255),
         password: z.string().max(255),
-
     }),
 });
 
@@ -20,7 +20,6 @@ export const LoginUserSchema = z.object({
 export const LogoutUserSchema = z.object({
     body: z.object({
         username: z.string().max(255),
-        password: z.string().max(255),
 
     }),
 });

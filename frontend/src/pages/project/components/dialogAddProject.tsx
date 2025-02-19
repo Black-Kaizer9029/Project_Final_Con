@@ -155,7 +155,7 @@ const DialogAdd = ({ getProjectData }: DialogProjectProps) => {
                             Cancel
                         </Button>
                     </Dialog.Close>
-                    <Dialog.Close>
+                    <Dialog.Close asChild>
                         <Button className="cursor-pointer" onClick={handleCreateProject}>Save</Button>
                     </Dialog.Close>
                 </Flex>
@@ -165,3 +165,4 @@ const DialogAdd = ({ getProjectData }: DialogProjectProps) => {
 };
 
 export default DialogAdd;
+

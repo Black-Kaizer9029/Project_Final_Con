@@ -33,14 +33,17 @@ export const authService = {
                 );
             }
 
-            const accessToken = generateAccessToken(checkUser.user_id);
+
+            const accessToken = generateAccessToken(checkUser.user_id,checkUser.role);
             // ตั้งค่า HTTP-Only Cookie
             res.cookie('token', accessToken, {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === 'production', // ใช้ HTTPS ใน production
                 sameSite: 'strict',
+                
             });
-           
+
+
             return new ServiceResponse<user>(
                 ResponseStatus.Success,
                 "Login success",
