@@ -6,7 +6,7 @@ function rolegrop4(req:Request, res:Response, next: NextFunction): void {
 
     const role = req.user?.role;
     // ตรวจสอบเงื่อนไข Role
-    if (role !== 'CEO' && role !== 'Employee' && role !== 'Manager' && role !== 'Admin') {
+    if (role !== 'CEO' && role !== 'Employee' && role !== 'Manager' && role !== 'Admin' && role !== 'RootAdmin') {
         const response = new ServiceResponse(
             ResponseStatus.Failed,
             "Unauthorized",

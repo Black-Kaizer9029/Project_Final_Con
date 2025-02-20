@@ -13,7 +13,7 @@ const Login: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8081/v1/auth/login', { //axios.post
+      const response = await fetch('http://localhost:8081/v1/auth/login', { //axios.post edit
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

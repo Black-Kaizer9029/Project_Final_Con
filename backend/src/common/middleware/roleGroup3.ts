@@ -4,9 +4,9 @@ import { StatusCodes } from "http-status-codes";
 
 function rolegrop3(req:Request, res:Response, next: NextFunction): void {
 
-    const role = req.user?.payload?.role;
+    const role = req.user?.role;
     // ตรวจสอบเงื่อนไข Role
-    if (role !== 'Employee' && role !== 'Admin') {
+    if (role !== 'Employee' && role !== 'Admin' && role !== 'RootAdmin') {
         const response = new ServiceResponse(
             ResponseStatus.Failed,
             "Unauthorized",
