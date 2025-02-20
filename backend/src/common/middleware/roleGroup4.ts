@@ -3,8 +3,8 @@ import { ServiceResponse, ResponseStatus } from "@common/models/serviceResponse"
 import { StatusCodes } from "http-status-codes";
 
 function rolegrop4(req:Request, res:Response, next: NextFunction): void {
-
-    const role = req.user?.role;
+    // ดึงข้อมูล Role จาก Request ที่ถูกส่งมา โดยมาจาก Middleware ก่อนหน้านี้ คือ authentication หรือ authorization
+    const role = req.user?.role; 
     // ตรวจสอบเงื่อนไข Role
     if (role !== 'CEO' && role !== 'Employee' && role !== 'Manager' && role !== 'Admin' && role !== 'RootAdmin') {
         const response = new ServiceResponse(

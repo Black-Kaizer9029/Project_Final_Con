@@ -1,5 +1,5 @@
 import prisma from "@src/db";
-// import { resource } from "@prisma/client"; 
+import { resource } from "@prisma/client"; 
 import { TypePayloadResource } from "@modules/resource/resourceModel";
 
 export const ResourceKeys = [

@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken'; 
 
 const JWT_SECRET = process.env.JWT_SECRET || 'JWT_SECRET2024';
 const ACCESS_TOKEN_EXPIRY = '8hr'; // 15 minutes

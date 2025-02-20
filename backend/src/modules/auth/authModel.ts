@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "zod"; // Import zod เพื่อใช้สำหรับการ validate ข้อมูล 
 
 // ประเภทข้อมูลสำหรับ payload ของ User
 export type TypePayloadUser = {  
