@@ -17,7 +17,7 @@ export const ResourceKeys = [
 
 export const ResourceRepository = {
     // ค้นหาทรัพยากรทั้งหมด
-    findAllAsync: async () => {
+    findAllAsync: async (): Promise<resource[]> => {
         return prisma.resource.findMany({
             select: {
                 resource_id: true,
@@ -37,10 +37,11 @@ export const ResourceRepository = {
     },
 
     // ค้นหาทรัพยากรตาม resource_id
-    findById: async (resource_id: string) => {
+    findById: async (resource_id: string): Promise<resource | null> => {
         return prisma.resource.findUnique({
             where: { resource_id: resource_id },
             select: {
+                task_id: true,
                 resource_id: true,
                 resource_name: true,
                 resource_type: true,
@@ -56,14 +57,14 @@ export const ResourceRepository = {
     },
 
     // ค้นหาทรัพยากรตามชื่อ
-    findByName: async (resource_name: string) => {
+    findByName: async (resource_name: string): Promise<resource | null> => {
         return prisma.resource.findFirst({
             where: { resource_name: resource_name },
         });
     },
 
     // สร้างทรัพยากรใหม่
-    create: async (payload: TypePayloadResource) => {
+    create: async (payload: TypePayloadResource): Promise<resource> => {
         const resource_name = payload.resource_name.trim();
         const setPayload = {
             resource_name: resource_name,
@@ -80,7 +81,7 @@ export const ResourceRepository = {
     },
 
     // อัปเดตทรัพยากร
-    update: async (resource_id: string, payload: Partial<TypePayloadResource>) => {
+    update: async (resource_id: string, payload: Partial<TypePayloadResource>): Promise<resource> => {
         return prisma.resource.update({
             where: { resource_id: resource_id },
             data: payload,
@@ -88,7 +89,7 @@ export const ResourceRepository = {
     },
 
     // ลบทรัพยากร
-    delete: async (resource_id: string) => {
+    delete: async (resource_id: string): Promise<resource> => {
         return prisma.resource.delete({
             where: { resource_id: resource_id },
         });
