@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Label from '@radix-ui/react-label';
-import { LOGIN } from '@/apis/endpoint.api';
+import { loginUser } from '@/services/login.service';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -14,21 +14,12 @@ const Login: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8081/v1/auth/login', { //axios.post edit
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        credentials: 'include', // อนุญาตให้ browser จัดการ cookie
-        body: JSON.stringify({ username, password }), // ไม่ต้องส่ง role
-      });
+      const response = await loginUser({ username, password });
 
-      if (response.ok) {
-        // Redirect to /admin on successful login
-        navigate('/admin');
+      if (response.success) {
+        navigate('/admin'); // Redirect ไปที่ /admin
       } else {
-        const errorData = await response.json();
-        setError(errorData.message || 'Invalid login credentials');
+        setError(response.message || 'Invalid login credentials');
       }
     } catch (err) {
       setError('An error occurred. Please try again.');
