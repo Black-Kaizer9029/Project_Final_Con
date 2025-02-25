@@ -61,31 +61,30 @@ export const authService = {
         }
     },
 
-    // // Logout a user
-    // logout: async (res: any) => {
-    //     try {
-    //         res.clearCookie('token', {
-    //             httpOnly: true,
-    //             secure: process.env.NODE_ENV === 'production',
-    //             sameSite: 'strict',
-    //         });
-
-    //         return new ServiceResponse(
-    //             ResponseStatus.Success,
-    //             "Logout success",
-    //             null,
-    //             StatusCodes.OK
-    //         );
-    //     } catch (ex) {
-    //         const errorMessage = "Error logout user: " + (ex as Error).message;
-    //         return new ServiceResponse(
-    //             ResponseStatus.Failed,
-    //             errorMessage,
-    //             null,
-    //             StatusCodes.INTERNAL_SERVER_ERROR
-    //         );
-    //     }
-    // },
+    // logout a user
+    logout: async (res: any) => {
+        try {
+            res.clearCookie("token", { //ล้างค่า Cookie ที่ชื่อ token ออกไป 
+                httpOnly: true, // ไม่สามารถเข้าถึงค่า Cookie จาก JavaScript ได้ หรือ เพื่อป้องกันการเข้าถึง Cookie จาก JavaScript โดยตรง
+                secure: process.env.NODE_ENV === "production", // ใช้ HTTPS ใน production เท่านั้น หรือ ใช้งานใน localhost ได้
+                sameSite: "strict", 
+            });
+    
+            return new ServiceResponse(
+                ResponseStatus.Success,
+                "Logout successful", 
+                null,
+                StatusCodes.OK
+            );
+        } catch (ex) {
+            return new ServiceResponse(
+                ResponseStatus.Failed,
+                "Error during logout: " + (ex as Error).message,
+                null,
+                StatusCodes.INTERNAL_SERVER_ERROR
+            );
+        }
+    },
 };
 
 //ตรวจสอบฐานข้อมูล และจัดการ Logic
